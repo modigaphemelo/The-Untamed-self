@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Untamed Self | Field notes from a fight to stay human</title>
+    <meta name="description" content="Real talk about breaking free from the cages we build ourselves. No systems. Just truth.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        :root {
+            --earth: #8B4513;
+            --sky: #4682B4;
+            --fire: #CC5500;
+            --shadow: #2F4F4F;
+            --light: #F5F5DC;
+        }
+        .accent { color: var(--fire); font-weight: bold; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/hero-bg.jpg'); background-size: cover; color: white; padding: 4rem 2rem; text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .subtitle { font-size: 1.3rem; opacity: 0.9; }
+        .card { border: 2px solid var(--earth); border-radius: 8px; padding: 2rem; margin: 2rem 0; background: white; }
+        .button { display: inline-block; background: var(--fire); color: white; padding: 0.8rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: bold; border: none; }
+        .button-outline { border: 2px solid var(--fire); color: var(--fire); padding: 0.8rem 1.5rem; border-radius: 4px; text-decoration: none; background: transparent; }
+        .quote { border-left: 4px solid var(--sky); padding-left: 1.5rem; font-style: italic; margin: 2rem 0; color: var(--shadow); }
+        .ghost-tag { display: inline-block; background: var(--shadow); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8em; margin-right: 0.5rem; }
+    </style>
+</head>
+<body>
+    <div class="reading-progress">
+        <div class="reading-progress-fill"></div>
+    </div>
+
+    <button class="sidenav-toggle" id="sidenavToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="container">
+        <nav class="sidenav" id="sidenav">
+            <div class="sidenav-header">
+                <h1>THE UNTAMED<br>SELF</h1>
+                <p class="sidenav-subtitle">Field notes from a fight to stay human</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">Why This Exists</a></li>
+                
+                <li class="nav-category">PART 1: MAP THE CAGE</li>
+                <li><a href="part1/habits-that-hold.html">The Habits That Hold You</a></li>
+                <li><a href="part1/body-keeps-score.html">The Body Keeps the Score</a></li>
+                <li><a href="part1/mind-factory.html">The Mind Factory</a></li>
+                
+                <li class="nav-category">PART 2: SMALL REBELLIONS</li>
+                <li><a href="part2/log-skipped-routine.html">Log: The Day I Skipped the Routine</a></li>
+                <li><a href="part2/log-anger-use.html">Log: When Anger Was Useful</a></li>
+                <li><a href="part2/log-trust-gut.html">Log: The Time I Trusted My Gut</a></li>
+                
+                <li class="nav-category">PART 3: TOOLS THAT DON'T LIE</li>
+                <li><a href="part3/tool-walk-away.html">Tool: Know When to Walk Away</a></li>
+                <li><a href="part3/tool-say-no.html">Tool: How to Say No Without Apology</a></li>
+                <li><a href="part3/tool-useless-joy.html">Tool: Useless Joy</a></li>
+                
+                <li class="nav-category">THE GHOSTS IN THE ROOM</li>
+                <li><a href="ghosts/nietzsche.html">Nietzsche: The Hammer</a></li>
+                <li><a href="ghosts/fanon.html">Fanon: The Wound</a></li>
+                <li><a href="ghosts/foucault.html">Foucault: The Jailer</a></li>
+            </ul>
+            <div class="sidenav-footer">
+                <p style="font-size:0.8em; color: var(--shadow);">This site is a work in progress.<br>Just like the person writing it.</p>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>THE UNTAMED SELF</h1>
+                    <p class="subtitle">Field notes from a fight to stay human</p>
+                    <p style="max-width: 700px; margin: 2rem auto; font-size: 1.1rem;">
+                        This is not another self-help site. This is <span class="accent">real talk</span> about breaking free from the cages we build ourselves. No perfect systems. Just truth, struggle and small acts of rebellion.
+                    </p>
+                    <a href="about.html" class="button" style="margin-top: 1rem;">
+                        Read the Full Story
+                    </a>
+                </div>
+            </section>
+
+            <div class="content">
+                
+                <section class="card">
+                    <h2><i class="fas fa-compass"></i> Where to Begin</h2>
+                    <p>If you are tired of being told to optimise your life, hack your productivity, or fix yourself, start here.</p>
+                    
+                    <div class="start-options">
+                        <div class="option">
+                            <h3><i class="fas fa-map-marked-alt"></i> I want to see what holds me back</h3>
+                            <p>Begin with <a href="part1/habits-that-hold.html" class="accent">The Habits That Hold You</a> — a clear look at the invisible chains.</p>
+                        </div>
+                        <div class="option">
+                            <h3><i class="fas fa-user-check"></i> I need proof rebellion works</h3>
+                            <p>Read <a href="part2/log-skipped-routine.html" class="accent">The Day I Skipped the Routine</a> — one small act with large consequences.</p>
+                        </div>
+                        <div class="option">
+                            <h3><i class="fas fa-tools"></i> I need practical tools now</h3>
+                            <p>Go to <a href="part3/tool-say-no.html" class="accent">How to Say No Without Apology</a> — a skill that changes everything.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="quote">
+                    <p>"The most dangerous prison is the one you build yourself, then forget you are the jailer."</p>
+                    <p class="quote-author">— From the field notes</p>
+                </div>
+
+                <section class="card">
+                    <h2><i class="fas fa-history"></i> Latest from the Field</h2>
+                    
+                    <div class="latest-post">
+                        <h3><a href="part2/log-trust-gut.html" class="accent">Log: The Time I Trusted My Gut</a></h3>
+                        <p><em>Posted 2 days ago</em> • <span class="ghost-tag">Nietzsche</span> <span class="ghost-tag">Rebellion</span></p>
+                        <p>Everyone said take the job. The money was good, the title impressive. My gut said run. I listened. Here is what happened.</p>
+                    </div>
+                    
+                    <div class="latest-post">
+                        <h3><a href="part1/body-keeps-score.html" class="accent">The Body Keeps the Score</a></h3>
+                        <p><em>Posted 1 week ago</em> • <span class="ghost-tag">Fanon</span> <span class="ghost-tag">Mapping</span></p>
+                        <p>Your body remembers what your mind tries to forget. The tension in your shoulders, the stomach knots — they are messages. Here is how to read them.</p>
+                    </div>
+                    
+                    <a href="part2.html" class="button" style="margin-top: 1.5rem;">
+                        Read All Field Notes
+                    </a>
+                </section>
+
+                <section class="card" style="background: rgba(204, 85, 0, 0.05);">
+                    <h2><i class="fas fa-ghost"></i> The Ghosts in the Room</h2>
+                    <p>This work does not happen in a vacuum. These thinkers haunt every page:</p>
+                    
+                    <div class="ghosts-grid">
+                        <div class="ghost">
+                            <h4><a href="ghosts/nietzsche.html" class="accent">Nietzsche</a></h4>
+                            <p>The hammer. He asks: "Is this making you stronger, or just more obedient?"</p>
+                        </div>
+                        <div class="ghost">
+                            <h4><a href="ghosts/fanon.html" class="accent">Fanon</a></h4>
+                            <p>The wound. He reminds us: "The personal is political. Your pain has a history."</p>
+                        </div>
+                        <div class="ghost">
+                            <h4><a href="ghosts/foucault.html" class="accent">Foucault</a></h4>
+                            <p>The jailer. He shows: "We build our own prisons, then call them freedom."</p>
+                        </div>
+                    </div>
+                    
+                    <p>They do not give answers. They give <span class="accent">better questions</span>.</p>
+                </section>
+
+                <section class="card" style="text-align: center;">
+                    <h2>Ready to Start Your Own Rebellion?</h2>
+                    <p>It begins with one small act of disobedience.</p>
+                    
+                    <div style="margin: 2rem 0;">
+                        <a href="part2/log-skipped-routine.html" class="button" style="margin-right: 1rem;">
+                            Read the First Rebellion
+                        </a>
+                        <a href="about.html" class="button-outline">
+                            Why This Matters
+                        </a>
+                    </div>
+                    
+                    <p class="small-note">
+                        <i class="fas fa-lock-open"></i> This is not about breaking out. It is about <span class="accent">remembering you were never locked in</span>.
+                    </p>
+                </section>
+
+            </div>
+
+            <footer>
+                <p>THE UNTAMED SELF · 2026</p>
+                <p class="footer-note">Still fighting. Still breathing. Still free.</p>
+                <p style="font-size:0.9em; color: var(--shadow); margin-top: 0.5rem;">
+                    <i class="fas fa-map-marker-alt"></i> Written in South Africa
+                </p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
