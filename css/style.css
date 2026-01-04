@@ -115,6 +115,13 @@ a:hover {
     margin-left: var(--sidenav-width);
     padding: 2.5rem 2rem;
     max-width: calc(100% - var(--sidenav-width));
+    width: 100%;
+}
+
+.content {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    width: 100%;
 }
 
 /* ==============================================
@@ -230,9 +237,8 @@ a:hover {
 }
 
 /* ==============================================
-   COMPONENTS
+   HERO SECTION
    ============================================== */
-/* Hero Section */
 .hero {
     background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), url('img/hero-bg.jpg');
     background-size: cover;
@@ -270,7 +276,18 @@ a:hover {
     color: var(--text-secondary);
 }
 
-/* Cards & Boxes */
+.hero-quote {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin: 1.5rem auto;
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* ==============================================
+   CARDS & BOXES
+   ============================================== */
 .card {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
@@ -301,12 +318,6 @@ a:hover {
 
 .card:hover::before {
     opacity: 1;
-}
-
-.content {
-    max-width: var(--content-max-width);
-    margin: 0 auto;
-    padding: 0 1rem;
 }
 
 /* Callout Box */
@@ -610,16 +621,13 @@ a:hover {
     transform: translateY(-2px);
 }
 
-/* Latest Post */
-.latest-post {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border);
-}
-
-.latest-post:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
+.ghost-quote {
+    font-style: italic;
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(106, 171, 210, 0.2);
 }
 
 /* Quote */
@@ -691,98 +699,313 @@ footer {
     margin-top: 0.5rem;
 }
 
+.footer-quote {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
 /* ==============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN - MOBILE FIXES
    ============================================== */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+    /* Fix container layout */
+    .container {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    /* Fix sidenav for mobile - slide from top */
     .sidenav {
-        transform: translateX(-100%);
-        width: 280px;
-        box-shadow: var(--shadow-lg);
-        background: var(--bg-primary);
+        width: 100%;
+        height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 1rem;
+        max-height: 70vh;
+        overflow-y: auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
-
+    
     .sidenav.active {
-        transform: translateX(0);
+        transform: translateY(0);
     }
-
+    
+    /* Fix main content spacing */
     .main-content {
         margin-left: 0;
         width: 100%;
-        padding: 4rem 1.5rem 2rem;
+        padding: 4rem 1rem 2rem;
+        margin-top: 0;
     }
-
+    
+    /* Fix content width */
+    .content {
+        padding: 0;
+        width: 100%;
+    }
+    
+    /* Fix hero section */
+    .hero {
+        padding: 2rem 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-quote {
+        font-size: 1rem;
+        margin: 1rem 0;
+        padding: 0 0.5rem;
+    }
+    
+    /* Fix card layouts */
+    .card {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        width: 100%;
+    }
+    
+    /* Fix grid layouts */
+    .start-options {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .ghosts-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .method-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Fix buttons */
+    .button, .button-outline {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.95rem;
+    }
+    
+    .method-card .button-outline {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    /* Fix CTA box */
+    .cta-box {
+        padding: 1.5rem 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .cta-box .button,
+    .cta-box .button-outline {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    /* Fix navigation buttons */
+    .nav-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        margin: 2rem 0;
+        padding: 1rem 0;
+    }
+    
+    .nav-buttons .button,
+    .nav-buttons .button-outline {
+        width: 100%;
+    }
+    
+    /* Fix quotes */
+    .quote {
+        padding: 1.2rem;
+        margin: 1.5rem 0;
+        font-size: 1rem;
+    }
+    
+    .ghost-quote {
+        font-size: 0.85rem;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+    }
+    
+    /* Fix sidenav toggle button */
     .sidenav-toggle {
         display: flex;
         align-items: center;
         justify-content: center;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1001;
+        background: var(--fire);
+        color: var(--light);
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: var(--radius-sm);
+        font-size: 1.2rem;
     }
-}
-
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.2rem;
+    
+    /* Fix footer */
+    footer {
+        padding: 1.5rem 1rem;
+        margin-top: 2rem;
+        font-size: 0.85rem;
     }
-
-    .hero .subtitle {
-        font-size: 1.1rem;
+    
+    .footer-quote {
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
     }
-
+    
+    /* Fix headings */
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.3rem; }
+    h4 { font-size: 1.1rem; }
+    
+    /* Fix spacing */
+    .spacer {
+        height: 1.5rem;
+    }
+    
+    /* Fix border-crack */
     .border-crack {
         padding: 1.5rem;
-    }
-
-    .method-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .nav-buttons {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .nav-buttons .button,
-    .nav-buttons .button-outline {
+        margin: 1.5rem 0;
         width: 100%;
-        text-align: center;
     }
-
-    .start-options {
-        grid-template-columns: 1fr;
+    
+    /* Fix example boxes */
+    .example-box {
+        padding: 1.2rem;
+        margin: 1.2rem 0;
+        width: 100%;
     }
-
-    .ghosts-grid {
-        grid-template-columns: 1fr;
-    }
-
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.75rem; }
-    h3 { font-size: 1.3rem; }
-}
-
-@media (max-width: 480px) {
-    .main-content {
-        padding: 5rem 1rem 2rem;
-    }
-
-    .hero {
-        padding: 3rem 1rem;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .card,
-    .method-card,
-    .example-box,
+    
+    /* Fix callouts */
     .callout {
         padding: 1.5rem;
+        margin: 1.5rem 0;
+        font-size: 1rem;
+        width: 100%;
     }
+    
+    /* Fix ghost tags */
+    .ghost-tag {
+        display: inline-block;
+        margin: 0.25rem 0.25rem 0.25rem 0;
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+    }
+    
+    /* Fix options */
+    .option {
+        padding: 1.2rem;
+        margin: 0.5rem 0;
+        width: 100%;
+    }
+    
+    /* Fix method cards */
+    .method-card {
+        padding: 1.5rem;
+        width: 100%;
+    }
+    
+    .method-number {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    /* Fix sidenav header */
+    .sidenav-header {
+        padding: 0.5rem 0 1rem 0;
+        margin-bottom: 1rem;
+    }
+    
+    .sidenav-header h1 {
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .sidenav-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    /* Fix nav links */
+    .nav-links {
+        margin-bottom: 1.5rem;
+    }
+    
+    .nav-links a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .nav-category {
+        margin: 1.5rem 0 0.5rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Fix sidenav footer */
+    .sidenav-footer {
+        padding-top: 1rem;
+        font-size: 0.75rem;
+    }
+}
 
-    .button,
-    .button-outline {
-        padding: 0.8rem 1.5rem;
+/* Extra small devices */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+    
+    .card {
+        padding: 1.2rem;
+    }
+    
+    .method-card, .ghost, .option {
+        padding: 1rem;
+    }
+    
+    .quote {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .button, .button-outline {
+        padding: 0.7rem 1rem;
         font-size: 0.9rem;
     }
 }
@@ -851,20 +1074,4 @@ footer {
 
 .button-outline:hover .fa-arrow-left {
     transform: translateX(-4px);
-}
-
-/* ==============================================
-   TEXTURE OVERLAY
-   ============================================== */
-body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="texture" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><rect fill="rgba(26,26,26,0.1)" width="100" height="100"/><path d="M0,0 L100,100" stroke="rgba(139,69,19,0.03)" stroke-width="1"/><path d="M100,0 L0,100" stroke="rgba(139,69,19,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23texture)"/></svg>');
-    pointer-events: none;
-    opacity: 0.3;
-    z-index: -1;
-   }
+       }
