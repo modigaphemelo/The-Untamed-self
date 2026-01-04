@@ -8,29 +8,29 @@
 }
 
 :root {
-    /* Earthy Color Palette */
+    /* Earthy Color Palette - Dark Theme */
     --earth: #8B4513;
-    --sky: #4682B4;
-    --fire: #CC5500;
-    --shadow: #2F4F4F;
-    --light: #F5F5DC;
+    --sky: #6AABD2;
+    --fire: #E67C52;
+    --shadow: #3A4A4A;
+    --light: #F5EDE0;
     
-    /* Background Colors */
-    --bg-primary: #FAF8F5;
-    --bg-secondary: #F5F0EB;
-    --bg-tertiary: #EDE8E0;
+    /* Dark Background Colors */
+    --bg-primary: #1A1A1A;
+    --bg-secondary: #242424;
+    --bg-tertiary: #2D2D2D;
     
     /* Text Colors */
-    --text-primary: #2F4F4F;
-    --text-secondary: #556B6B;
-    --text-tertiary: #7A8C8C;
+    --text-primary: #F5EDE0;
+    --text-secondary: #D4CCC0;
+    --text-tertiary: #A69E92;
     
     /* Borders & Shadows */
-    --border: #D4C8B5;
-    --border-light: #E8E1D6;
-    --shadow-sm: 0 2px 12px rgba(139, 69, 19, 0.08);
-    --shadow-md: 0 4px 20px rgba(139, 69, 19, 0.12);
-    --shadow-lg: 0 8px 32px rgba(139, 69, 19, 0.15);
+    --border: #4A4035;
+    --border-light: #3A3025;
+    --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
     
     /* Typography */
     --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
@@ -59,6 +59,10 @@ body {
     background-color: var(--bg-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image: 
+        linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)),
+        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M20,20 Q40,0 60,20 T100,20" stroke="rgba(139,69,19,0.03)" fill="none" stroke-width="1"/></svg>');
+    background-size: 200px 200px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -94,7 +98,7 @@ a {
 }
 
 a:hover {
-    color: var(--earth);
+    color: var(--light);
 }
 
 /* ==============================================
@@ -127,6 +131,7 @@ a:hover {
     padding: 2rem 1rem;
     overflow-y: auto;
     z-index: 100;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .sidenav-header {
@@ -138,7 +143,7 @@ a:hover {
 .sidenav-header h1 {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--earth);
+    color: var(--fire);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 0.5rem;
@@ -172,24 +177,25 @@ a:hover {
 
 .nav-links a:hover {
     color: var(--fire);
-    background: rgba(204, 85, 0, 0.05);
+    background: rgba(230, 124, 82, 0.1);
     border-left: 2px solid var(--fire);
 }
 
 .nav-links a.active {
     color: var(--fire);
-    background: rgba(204, 85, 0, 0.08);
+    background: rgba(230, 124, 82, 0.15);
     border-left: 2px solid var(--fire);
     font-weight: 500;
 }
 
 .nav-category {
-    color: var(--earth);
+    color: var(--fire);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin: 1.5rem 0 0.5rem 1rem;
     font-weight: 600;
+    opacity: 0.8;
 }
 
 .sidenav-footer {
@@ -206,7 +212,7 @@ a:hover {
     top: 1rem;
     left: 1rem;
     background: var(--fire);
-    color: white;
+    color: var(--light);
     border: none;
     width: 40px;
     height: 40px;
@@ -215,10 +221,12 @@ a:hover {
     z-index: 1000;
     cursor: pointer;
     transition: var(--transition);
+    box-shadow: 0 2px 10px rgba(230, 124, 82, 0.3);
 }
 
 .sidenav-toggle:hover {
     background: var(--earth);
+    transform: scale(1.05);
 }
 
 /* ==============================================
@@ -226,40 +234,73 @@ a:hover {
    ============================================== */
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/hero-bg.jpg');
+    background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9)), url('img/hero-bg.jpg');
     background-size: cover;
-    color: white;
+    background-position: center;
+    color: var(--text-primary);
     padding: 4rem 2rem;
     text-align: center;
     margin-bottom: 2.5rem;
     border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--fire), transparent);
 }
 
 .hero-content h1 {
-    color: white;
+    color: var(--text-primary);
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.subtitle {
+.hero .subtitle {
     font-size: 1.3rem;
     opacity: 0.9;
     margin-bottom: 2rem;
+    color: var(--text-secondary);
 }
 
 /* Cards & Boxes */
 .card {
-    background: white;
-    border: 2px solid var(--border);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
     border-radius: var(--radius-md);
     padding: 2rem;
     margin: 2rem 0;
     transition: var(--transition);
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--fire), transparent);
+    opacity: 0;
+    transition: var(--transition);
 }
 
 .card:hover {
-    border-color: var(--earth);
+    border-color: var(--fire);
     box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.card:hover::before {
+    opacity: 1;
 }
 
 .content {
@@ -270,57 +311,92 @@ a:hover {
 
 /* Callout Box */
 .callout {
-    background: rgba(204, 85, 0, 0.07);
-    border: 2px solid var(--fire);
-    border-left: 6px solid var(--fire);
+    background: rgba(230, 124, 82, 0.1);
+    border: 1px solid var(--fire);
+    border-left: 4px solid var(--fire);
     padding: 2rem;
     border-radius: var(--radius-md);
     margin: 2rem 0;
     font-size: 1.1rem;
     line-height: 1.6;
+    position: relative;
+    overflow: hidden;
 }
 
-.bg-fire { background: rgba(204, 85, 0, 0.07); }
-.bg-earth { background: rgba(139, 69, 19, 0.05); }
+.callout::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 0%, rgba(230, 124, 82, 0.05) 100%);
+    pointer-events: none;
+}
+
+.bg-fire { background: rgba(230, 124, 82, 0.1); }
+.bg-earth { background: rgba(139, 69, 19, 0.1); }
 
 .border-crack {
-    border: 2px solid var(--earth);
-    border-left: 6px solid var(--fire);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--fire);
     padding: 2.5rem;
     border-radius: var(--radius-md);
     margin: 2rem 0;
+    position: relative;
+}
+
+.border-crack::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--fire), transparent);
+    opacity: 0.3;
 }
 
 /* Example Box */
 .example-box {
-    background: rgba(139, 69, 19, 0.05);
+    background: rgba(139, 69, 19, 0.1);
     border: 1px solid var(--earth);
     border-radius: var(--radius-md);
     padding: 1.5rem;
     margin: 1.5rem 0;
     transition: var(--transition);
+    position: relative;
 }
 
 .example-box:hover {
-    background: rgba(139, 69, 19, 0.08);
+    background: rgba(139, 69, 19, 0.15);
+    transform: translateX(4px);
 }
 
 .example-box h4 {
-    color: var(--earth);
+    color: var(--fire);
     margin-bottom: 0.75rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
+.example-box h4 i {
+    color: var(--earth);
+}
+
 /* Voice Note */
 .voice-note {
     font-style: italic;
-    color: var(--shadow);
-    border-left: 3px dotted var(--sky);
+    color: var(--text-secondary);
+    border-left: 3px solid var(--sky);
     padding-left: 1rem;
     margin: 1.5rem 0;
     font-size: 0.95em;
+    background: rgba(106, 171, 210, 0.05);
+    padding: 1rem 1rem 1rem 1.5rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 /* Method Grid */
@@ -332,11 +408,13 @@ a:hover {
 }
 
 .method-card {
-    background: white;
+    background: var(--bg-tertiary);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     padding: 2rem;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
 .method-card:hover {
@@ -345,11 +423,27 @@ a:hover {
     box-shadow: var(--shadow-sm);
 }
 
+.method-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--fire);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.method-card:hover::before {
+    opacity: 1;
+}
+
 .method-number {
     width: 40px;
     height: 40px;
     background: var(--fire);
-    color: white;
+    color: var(--light);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -357,13 +451,19 @@ a:hover {
     font-weight: 600;
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.method-card:hover .method-number {
+    background: var(--earth);
+    transform: scale(1.1);
 }
 
 /* Buttons */
 .button {
     display: inline-block;
     background: var(--fire);
-    color: white;
+    color: var(--light);
     padding: 0.9rem 1.8rem;
     border-radius: var(--radius-sm);
     text-decoration: none;
@@ -372,6 +472,8 @@ a:hover {
     transition: var(--transition);
     cursor: pointer;
     font-size: 1rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .button:hover {
@@ -395,7 +497,7 @@ a:hover {
 }
 
 .button-outline:hover {
-    background: rgba(204, 85, 0, 0.05);
+    background: rgba(230, 124, 82, 0.1);
     transform: translateY(-2px);
 }
 
@@ -410,6 +512,7 @@ a:hover {
     margin-bottom: 0.75rem;
     padding-left: 1.5rem;
     position: relative;
+    color: var(--text-secondary);
 }
 
 .bullet-list li::before {
@@ -425,9 +528,9 @@ a:hover {
     text-align: center;
     margin: 2rem 0;
     padding: 2rem;
-    background: rgba(204, 85, 0, 0.05);
+    background: rgba(230, 124, 82, 0.1);
     border-radius: var(--radius-md);
-    border: 1px solid rgba(204, 85, 0, 0.1);
+    border: 1px solid rgba(230, 124, 82, 0.2);
 }
 
 .small-note {
@@ -450,11 +553,17 @@ a:hover {
 .ghost-tag {
     display: inline-block;
     background: var(--shadow);
-    color: white;
+    color: var(--light);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8em;
     margin-right: 0.5rem;
+    transition: var(--transition);
+}
+
+.ghost-tag:hover {
+    background: var(--fire);
+    transform: translateY(-1px);
 }
 
 /* Start Options */
@@ -470,11 +579,13 @@ a:hover {
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     transition: var(--transition);
+    background: var(--bg-tertiary);
 }
 
 .option:hover {
-    border-color: var(--earth);
-    background: rgba(139, 69, 19, 0.02);
+    border-color: var(--fire);
+    background: rgba(139, 69, 19, 0.05);
+    transform: translateY(-2px);
 }
 
 /* Ghosts Grid */
@@ -490,11 +601,13 @@ a:hover {
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     transition: var(--transition);
+    background: var(--bg-tertiary);
 }
 
 .ghost:hover {
     border-color: var(--sky);
-    background: rgba(70, 130, 180, 0.02);
+    background: rgba(106, 171, 210, 0.05);
+    transform: translateY(-2px);
 }
 
 /* Latest Post */
@@ -515,7 +628,10 @@ a:hover {
     padding-left: 1.5rem;
     font-style: italic;
     margin: 2rem 0;
-    color: var(--shadow);
+    color: var(--text-secondary);
+    background: rgba(106, 171, 210, 0.05);
+    padding: 1.5rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
 .quote-author {
@@ -583,6 +699,7 @@ footer {
         transform: translateX(-100%);
         width: 280px;
         box-shadow: var(--shadow-lg);
+        background: var(--bg-primary);
     }
 
     .sidenav.active {
@@ -607,7 +724,7 @@ footer {
         font-size: 2.2rem;
     }
 
-    .subtitle {
+    .hero .subtitle {
         font-size: 1.1rem;
     }
 
@@ -674,7 +791,7 @@ footer {
    SCROLLBAR STYLING
    ============================================== */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -682,12 +799,12 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--border);
+    background: var(--earth);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--text-tertiary);
+    background: var(--fire);
 }
 
 .sidenav::-webkit-scrollbar {
@@ -699,7 +816,7 @@ footer {
 }
 
 .sidenav::-webkit-scrollbar-thumb {
-    background: var(--earth);
+    background: var(--fire);
     border-radius: 3px;
 }
 
@@ -707,8 +824,8 @@ footer {
    SELECTION STYLING
    ============================================== */
 ::selection {
-    background-color: rgba(204, 85, 0, 0.2);
-    color: var(--text-primary);
+    background-color: rgba(230, 124, 82, 0.3);
+    color: var(--light);
 }
 
 /* ==============================================
@@ -718,3 +835,36 @@ footer {
     outline: 2px solid var(--fire);
     outline-offset: 2px;
 }
+
+/* ==============================================
+   ICON STYLING
+   ============================================== */
+.fas, .fab, .far {
+    transition: var(--transition);
+}
+
+.button:hover .fas,
+.button-outline:hover .fas,
+.option:hover .fas {
+    transform: translateX(4px);
+}
+
+.button-outline:hover .fa-arrow-left {
+    transform: translateX(-4px);
+}
+
+/* ==============================================
+   TEXTURE OVERLAY
+   ============================================== */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="texture" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><rect fill="rgba(26,26,26,0.1)" width="100" height="100"/><path d="M0,0 L100,100" stroke="rgba(139,69,19,0.03)" stroke-width="1"/><path d="M100,0 L0,100" stroke="rgba(139,69,19,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23texture)"/></svg>');
+    pointer-events: none;
+    opacity: 0.3;
+    z-index: -1;
+   }
